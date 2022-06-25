@@ -8,12 +8,13 @@ public final class RickAndMortyQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query RickAndMorty {
-      characters(filter: {}) {
+    query RickAndMorty($page: Int!) {
+      characters(page: $page, filter: {}) {
         __typename
         info {
           __typename
           count
+          pages
         }
         results {
           __typename
@@ -26,20 +27,19 @@ public final class RickAndMortyQuery: GraphQLQuery {
           }
         }
       }
-      location(id: 1) {
-        __typename
-        id
-      }
-      episodesByIds(ids: [1, 2]) {
-        __typename
-        id
-      }
     }
     """
 
   public let operationName: String = "RickAndMorty"
 
-  public init() {
+  public var page: Int
+
+  public init(page: Int) {
+    self.page = page
+  }
+
+  public var variables: GraphQLMap? {
+    return ["page": page]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -47,9 +47,7 @@ public final class RickAndMortyQuery: GraphQLQuery {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("characters", arguments: ["filter": [:]], type: .object(Character.selections)),
-        GraphQLField("location", arguments: ["id": 1], type: .object(Location.selections)),
-        GraphQLField("episodesByIds", arguments: ["ids": [1, 2]], type: .list(.object(EpisodesById.selections))),
+        GraphQLField("characters", arguments: ["page": GraphQLVariable("page"), "filter": [:]], type: .object(Character.selections)),
       ]
     }
 
@@ -59,8 +57,8 @@ public final class RickAndMortyQuery: GraphQLQuery {
       self.resultMap = unsafeResultMap
     }
 
-    public init(characters: Character? = nil, location: Location? = nil, episodesByIds: [EpisodesById?]? = nil) {
-      self.init(unsafeResultMap: ["__typename": "Query", "characters": characters.flatMap { (value: Character) -> ResultMap in value.resultMap }, "location": location.flatMap { (value: Location) -> ResultMap in value.resultMap }, "episodesByIds": episodesByIds.flatMap { (value: [EpisodesById?]) -> [ResultMap?] in value.map { (value: EpisodesById?) -> ResultMap? in value.flatMap { (value: EpisodesById) -> ResultMap in value.resultMap } } }])
+    public init(characters: Character? = nil) {
+      self.init(unsafeResultMap: ["__typename": "Query", "characters": characters.flatMap { (value: Character) -> ResultMap in value.resultMap }])
     }
 
     /// Get the list of all characters
@@ -70,26 +68,6 @@ public final class RickAndMortyQuery: GraphQLQuery {
       }
       set {
         resultMap.updateValue(newValue?.resultMap, forKey: "characters")
-      }
-    }
-
-    /// Get a specific locations by ID
-    public var location: Location? {
-      get {
-        return (resultMap["location"] as? ResultMap).flatMap { Location(unsafeResultMap: $0) }
-      }
-      set {
-        resultMap.updateValue(newValue?.resultMap, forKey: "location")
-      }
-    }
-
-    /// Get a list of episodes selected by ids
-    public var episodesByIds: [EpisodesById?]? {
-      get {
-        return (resultMap["episodesByIds"] as? [ResultMap?]).flatMap { (value: [ResultMap?]) -> [EpisodesById?] in value.map { (value: ResultMap?) -> EpisodesById? in value.flatMap { (value: ResultMap) -> EpisodesById in EpisodesById(unsafeResultMap: value) } } }
-      }
-      set {
-        resultMap.updateValue(newValue.flatMap { (value: [EpisodesById?]) -> [ResultMap?] in value.map { (value: EpisodesById?) -> ResultMap? in value.flatMap { (value: EpisodesById) -> ResultMap in value.resultMap } } }, forKey: "episodesByIds")
       }
     }
 
@@ -148,6 +126,7 @@ public final class RickAndMortyQuery: GraphQLQuery {
           return [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
             GraphQLField("count", type: .scalar(Int.self)),
+            GraphQLField("pages", type: .scalar(Int.self)),
           ]
         }
 
@@ -157,8 +136,8 @@ public final class RickAndMortyQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(count: Int? = nil) {
-          self.init(unsafeResultMap: ["__typename": "Info", "count": count])
+        public init(count: Int? = nil, pages: Int? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Info", "count": count, "pages": pages])
         }
 
         public var __typename: String {
@@ -177,6 +156,16 @@ public final class RickAndMortyQuery: GraphQLQuery {
           }
           set {
             resultMap.updateValue(newValue, forKey: "count")
+          }
+        }
+
+        /// The amount of pages.
+        public var pages: Int? {
+          get {
+            return resultMap["pages"] as? Int
+          }
+          set {
+            resultMap.updateValue(newValue, forKey: "pages")
           }
         }
       }
@@ -292,86 +281,6 @@ public final class RickAndMortyQuery: GraphQLQuery {
               resultMap.updateValue(newValue, forKey: "name")
             }
           }
-        }
-      }
-    }
-
-    public struct Location: GraphQLSelectionSet {
-      public static let possibleTypes: [String] = ["Location"]
-
-      public static var selections: [GraphQLSelection] {
-        return [
-          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("id", type: .scalar(GraphQLID.self)),
-        ]
-      }
-
-      public private(set) var resultMap: ResultMap
-
-      public init(unsafeResultMap: ResultMap) {
-        self.resultMap = unsafeResultMap
-      }
-
-      public init(id: GraphQLID? = nil) {
-        self.init(unsafeResultMap: ["__typename": "Location", "id": id])
-      }
-
-      public var __typename: String {
-        get {
-          return resultMap["__typename"]! as! String
-        }
-        set {
-          resultMap.updateValue(newValue, forKey: "__typename")
-        }
-      }
-
-      /// The id of the location.
-      public var id: GraphQLID? {
-        get {
-          return resultMap["id"] as? GraphQLID
-        }
-        set {
-          resultMap.updateValue(newValue, forKey: "id")
-        }
-      }
-    }
-
-    public struct EpisodesById: GraphQLSelectionSet {
-      public static let possibleTypes: [String] = ["Episode"]
-
-      public static var selections: [GraphQLSelection] {
-        return [
-          GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-          GraphQLField("id", type: .scalar(GraphQLID.self)),
-        ]
-      }
-
-      public private(set) var resultMap: ResultMap
-
-      public init(unsafeResultMap: ResultMap) {
-        self.resultMap = unsafeResultMap
-      }
-
-      public init(id: GraphQLID? = nil) {
-        self.init(unsafeResultMap: ["__typename": "Episode", "id": id])
-      }
-
-      public var __typename: String {
-        get {
-          return resultMap["__typename"]! as! String
-        }
-        set {
-          resultMap.updateValue(newValue, forKey: "__typename")
-        }
-      }
-
-      /// The id of the episode.
-      public var id: GraphQLID? {
-        get {
-          return resultMap["id"] as? GraphQLID
-        }
-        set {
-          resultMap.updateValue(newValue, forKey: "id")
         }
       }
     }

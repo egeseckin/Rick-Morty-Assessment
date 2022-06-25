@@ -1,7 +1,8 @@
-query RickAndMorty {
-  characters(filter: {}) {
+query RickAndMorty ($page: Int!){
+  characters(page: $page, filter: {}) {
     info {
       count
+      pages
     }
     results {
       id
@@ -9,12 +10,6 @@ query RickAndMorty {
       image
       origin{name}
     }
-  }
-  location(id: 1) {
-    id
-  }
-  episodesByIds(ids: [1, 2]) {
-    id
   }
 }
 

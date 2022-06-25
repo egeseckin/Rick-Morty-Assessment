@@ -13,6 +13,8 @@ class customTableViewCell: UITableViewCell{
     
     let image = UIImageView()
     let cardView = UIView()
+    let emptyView = UIView()
+    
     let idStackView = UIStackView()
     let lblIdTitle = UILabel()
     let lblIdValue = UILabel()
@@ -28,7 +30,6 @@ class customTableViewCell: UITableViewCell{
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureCell()
-        self.layer.frame = contentView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 16, right: 0))
     }
     
     required init?(coder: NSCoder) {
@@ -36,33 +37,37 @@ class customTableViewCell: UITableViewCell{
     }
     
     func configureCell(){
-
-        addSubview(image)
-        addSubview(cardView)
         
+        addSubview(emptyView)
+        addSubview(cardView)
+        addSubview(image)
+       
         cardView.addSubview(idStackView)
         cardView.addSubview(nameStackView)
         cardView.addSubview(locationStackView)
         
         cardView.snp.makeConstraints{ (make) in
             make.top.equalTo(image.snp.bottom)
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
+            make.leading.equalToSuperview().offset(5)
+            make.trailing.equalToSuperview().offset(-5)
+        }
+        
+        emptyView.snp.makeConstraints{ (make) in
+            make.top.equalTo(cardView.snp.bottom)
             make.bottom.equalToSuperview()
+            make.height.equalTo(16.0)
         }
         
         
         cardView.clipsToBounds = true
         cardView.layer.cornerRadius = 10
         cardView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-        cardView.layer.masksToBounds = false
-        cardView.layer.shadowOffset = .zero
-        cardView.layer.shadowRadius = 5
-        cardView.layer.shadowOpacity = 1
+        
+        cardView.layer.shadowOffset = CGSize(width: 0, height: 6)
+        cardView.layer.shadowRadius = 3
+        cardView.layer.shadowOpacity = 0.1
         cardView.backgroundColor = .white
-        cardView.layer.shadowPath = UIBezierPath(rect: bounds).cgPath
-        cardView.layer.shouldRasterize = true
-        cardView.layer.rasterizationScale = UIScreen.main.scale
+        cardView.layer.masksToBounds = false
         
         image.clipsToBounds = true
         image.layer.cornerRadius = 10
@@ -73,8 +78,8 @@ class customTableViewCell: UITableViewCell{
         image.contentMode = .scaleAspectFill
         image.snp.makeConstraints{ (make) in
             make.top.equalToSuperview()
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
+            make.leading.equalToSuperview().offset(5)
+            make.trailing.equalToSuperview().offset(-5)
             make.height.equalTo(168)
         }
         
@@ -94,7 +99,7 @@ class customTableViewCell: UITableViewCell{
         idStackView.spacing = 0
         idStackView.snp.makeConstraints{ (make) in
             make.top.equalToSuperview().offset(8)
-            make.trailing.equalToSuperview().offset(-8)
+            make.trailing.equalToSuperview().offset(-17)
         }
         
         //Name Allignments
@@ -133,6 +138,7 @@ class customTableViewCell: UITableViewCell{
         locationStackView.snp.makeConstraints{ (make) in
             make.top.equalTo(nameStackView.snp.bottom).offset(8)
             make.leading.equalToSuperview().offset(14)
+            make.bottom.equalToSuperview().offset(-16)
         }
     }
 }

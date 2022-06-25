@@ -13,21 +13,31 @@ protocol viewModelDelegate: AnyObject{
 
 class viewModel {
     var characterData = [RickAndMortyQuery.Data.Character.Result]()
+    var page: Int = 1
     
     weak var delegate: viewModelDelegate?
     
     func loadData() {
         
-            Network.shared.apollo.fetch(query: RickAndMortyQuery()) { result in
-                switch result {
-                case .success(let graphQLResult):
-                    if let results = graphQLResult.data?.characters?.results{
-                        self.characterData =  results.compactMap { $0 }
-                        self.delegate?.dataModel(data: self.characterData)
+        Network.shared.apollo.fetch(query: RickAndMortyQuery(page: page)) { result in
+            switch result {
+            case .success(let graphQLResult):
+                if let info = graphQLResult.data?.characters?.info{
+                    if let pageNumber = info.pages {
+                        if  self.page <= pageNumber {
+                            self.page += 1
+                        }else{
+                            break
+                        }
                     }
-                case .failure(let error):
-                    print("Failure! Error: \(error)")
                 }
+                if let results = graphQLResult.data?.characters?.results{
+                    self.characterData.append(contentsOf: results.compactMap { $0 })
+                    self.delegate?.dataModel(data: self.characterData)
+                }
+            case .failure(let error):
+                print("Failure! Error: \(error)")
             }
         }
+    }
 }
