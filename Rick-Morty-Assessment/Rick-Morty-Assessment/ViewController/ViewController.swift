@@ -13,11 +13,18 @@ class ViewController: UIViewController {
     
     let tableView: UITableView = UITableView()
     
+    lazy var model = {
+        viewModel()
+    }()
+    
+    var data = [RickAndMortyQuery.Data.Character.Result]()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .white
-        //fetchChaaracters
+        model.delegate = self
+        model.loadData()
         setupUI()
         tableView.reloadData()
     }
@@ -58,6 +65,7 @@ class ViewController: UIViewController {
             m.trailing.equalToSuperview().offset(-24)
         }
         
+
         //for tableview adjustments
         tableView.delegate = self
         tableView.dataSource = self
@@ -79,14 +87,23 @@ private extension ViewController {
         print("Tapped")
     }
 }
+extension ViewController: viewModelDelegate {
+    func dataModel(data: [RickAndMortyQuery.Data.Character.Result]) {
+        self.data = data
+        tableView.reloadData()
+    }
+    
+    
+}
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return data.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! customTableViewCell
+        cell.setupCell(data: data[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

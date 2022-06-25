@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5672AC552867153900B3A335 /* Queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 5672AC542867153900B3A335 /* Queries.graphql */; };
+		5672AC572867176700B3A335 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 5672AC562867176700B3A335 /* schema.json */; };
+		5672AC59286717DB00B3A335 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672AC58286717DB00B3A335 /* API.swift */; };
+		5672AC5B28673CBA00B3A335 /* imageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672AC5A28673CBA00B3A335 /* imageModel.swift */; };
+		5672AC5E2867446C00B3A335 /* Longinus in Frameworks */ = {isa = PBXBuildFile; productRef = 5672AC5D2867446C00B3A335 /* Longinus */; };
 		56C1CB362866127400D4F291 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB352866127400D4F291 /* AppDelegate.swift */; };
 		56C1CB382866127400D4F291 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB372866127400D4F291 /* SceneDelegate.swift */; };
 		56C1CB3A2866127400D4F291 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB392866127400D4F291 /* ViewController.swift */; };
@@ -35,7 +40,7 @@
 		56C1CB932866619C00D4F291 /* tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB922866619C00D4F291 /* tableView.swift */; };
 		56C1CB952866D49300D4F291 /* customTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB942866D49300D4F291 /* customTableViewCell.swift */; };
 		56C1CBA42867073B00D4F291 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 56C1CBA32867073B00D4F291 /* Apollo */; };
-		56C1CBA628670C6900D4F291 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CBA528670C6900D4F291 /* schema.json */; };
+		56C1CBA928670CDA00D4F291 /* Apollo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CBA828670CDA00D4F291 /* Apollo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +74,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5672AC542867153900B3A335 /* Queries.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Queries.graphql; sourceTree = "<group>"; };
+		5672AC562867176700B3A335 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		5672AC58286717DB00B3A335 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = "Rick-Morty-Assessment/API.swift"; sourceTree = SOURCE_ROOT; };
+		5672AC5A28673CBA00B3A335 /* imageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageModel.swift; sourceTree = "<group>"; };
 		56C1CB322866127400D4F291 /* Rick-Morty-Assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick-Morty-Assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C1CB352866127400D4F291 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56C1CB372866127400D4F291 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,7 +108,7 @@
 		56C1CB8428665A0D00D4F291 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		56C1CB922866619C00D4F291 /* tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableView.swift; sourceTree = "<group>"; };
 		56C1CB942866D49300D4F291 /* customTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTableViewCell.swift; sourceTree = "<group>"; };
-		56C1CBA528670C6900D4F291 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
+		56C1CBA828670CDA00D4F291 /* Apollo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apollo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +118,7 @@
 			files = (
 				56C1CB7628661F1400D4F291 /* SnapKit in Frameworks */,
 				56C1CBA42867073B00D4F291 /* Apollo in Frameworks */,
+				5672AC5E2867446C00B3A335 /* Longinus in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,17 +162,18 @@
 		56C1CB342866127400D4F291 /* Rick-Morty-Assessment */ = {
 			isa = PBXGroup;
 			children = (
+				56C1CB352866127400D4F291 /* AppDelegate.swift */,
+				56C1CB372866127400D4F291 /* SceneDelegate.swift */,
+				5672AC562867176700B3A335 /* schema.json */,
 				56C1CB992866D4AA00D4F291 /* ViewController */,
 				56C1CB982866D4A500D4F291 /* ViewModel */,
 				56C1CB972866D4A000D4F291 /* Model */,
 				56C1CB962866D49A00D4F291 /* View */,
-				56C1CB352866127400D4F291 /* AppDelegate.swift */,
-				56C1CB372866127400D4F291 /* SceneDelegate.swift */,
 				56C1CB3E2866127700D4F291 /* Assets.xcassets */,
 				56C1CB432866127700D4F291 /* Info.plist */,
-				56C1CBA528670C6900D4F291 /* schema.json */,
 				56C1CB692866154C00D4F291 /* LaunchScreen.storyboard */,
 				56C1CB6B28661D1E00D4F291 /* Main.storyboard */,
+				56C1CBA728670CCE00D4F291 /* GraphQL */,
 				56C1CB7728665A0D00D4F291 /* Roboto */,
 			);
 			path = "Rick-Morty-Assessment";
@@ -218,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				56C1CB67286614C500D4F291 /* Model.swift */,
+				5672AC5A28673CBA00B3A335 /* imageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,6 +250,16 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		56C1CBA728670CCE00D4F291 /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				5672AC58286717DB00B3A335 /* API.swift */,
+				56C1CBA828670CDA00D4F291 /* Apollo.swift */,
+				5672AC542867153900B3A335 /* Queries.graphql */,
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -245,6 +267,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 56C1CB5C2866127700D4F291 /* Build configuration list for PBXNativeTarget "Rick-Morty-Assessment" */;
 			buildPhases = (
+				56C1CBAC28670DED00D4F291 /* Generate Apollo GraphQL API */,
 				56C1CB2E2866127400D4F291 /* Sources */,
 				56C1CB2F2866127400D4F291 /* Frameworks */,
 				56C1CB302866127400D4F291 /* Resources */,
@@ -258,6 +281,7 @@
 			packageProductDependencies = (
 				56C1CB7528661F1400D4F291 /* SnapKit */,
 				56C1CBA32867073B00D4F291 /* Apollo */,
+				5672AC5D2867446C00B3A335 /* Longinus */,
 			);
 			productName = "Rick-Morty-Assessment";
 			productReference = 56C1CB322866127400D4F291 /* Rick-Morty-Assessment.app */;
@@ -334,6 +358,7 @@
 			packageReferences = (
 				56C1CB7428661F1400D4F291 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				56C1CBA22867073A00D4F291 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+				5672AC5C2867446C00B3A335 /* XCRemoteSwiftPackageReference "Longinus" */,
 			);
 			productRefGroup = 56C1CB332866127400D4F291 /* Products */;
 			projectDirPath = "";
@@ -361,9 +386,10 @@
 				56C1CB8E28665A0D00D4F291 /* Roboto-BlackItalic.ttf in Resources */,
 				56C1CB9028665A0D00D4F291 /* Roboto-Thin.ttf in Resources */,
 				56C1CB8628665A0D00D4F291 /* Roboto-Light.ttf in Resources */,
+				5672AC572867176700B3A335 /* schema.json in Resources */,
 				56C1CB8928665A0D00D4F291 /* Roboto-ThinItalic.ttf in Resources */,
 				56C1CB9128665A0D00D4F291 /* Roboto-Black.ttf in Resources */,
-				56C1CBA628670C6900D4F291 /* schema.json in Resources */,
+				5672AC552867153900B3A335 /* Queries.graphql in Resources */,
 				56C1CB8828665A0D00D4F291 /* Roboto-MediumItalic.ttf in Resources */,
 				56C1CB6C28661D1E00D4F291 /* Main.storyboard in Resources */,
 				56C1CB8C28665A0D00D4F291 /* Roboto-Italic.ttf in Resources */,
@@ -387,17 +413,41 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		56C1CBAC28670DED00D4F291 /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/apollo-ios/scripts\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the CLI script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		56C1CB2E2866127400D4F291 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				56C1CB68286614C500D4F291 /* Model.swift in Sources */,
+				5672AC5B28673CBA00B3A335 /* imageModel.swift in Sources */,
 				56C1CB3A2866127400D4F291 /* ViewController.swift in Sources */,
 				56C1CB362866127400D4F291 /* AppDelegate.swift in Sources */,
 				56C1CB952866D49300D4F291 /* customTableViewCell.swift in Sources */,
 				56C1CB66286614BA00D4F291 /* ViewModel.swift in Sources */,
 				56C1CB382866127400D4F291 /* SceneDelegate.swift in Sources */,
+				56C1CBA928670CDA00D4F291 /* Apollo.swift in Sources */,
+				5672AC59286717DB00B3A335 /* API.swift in Sources */,
 				56C1CB932866619C00D4F291 /* tableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -723,6 +773,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5672AC5C2867446C00B3A335 /* XCRemoteSwiftPackageReference "Longinus" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/KittenYang/Longinus.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		56C1CB7428661F1400D4F291 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -742,6 +800,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5672AC5D2867446C00B3A335 /* Longinus */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5672AC5C2867446C00B3A335 /* XCRemoteSwiftPackageReference "Longinus" */;
+			productName = Longinus;
+		};
 		56C1CB7528661F1400D4F291 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 56C1CB7428661F1400D4F291 /* XCRemoteSwiftPackageReference "SnapKit" */;

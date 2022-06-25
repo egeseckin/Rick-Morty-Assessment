@@ -1,0 +1,59 @@
+query RickAndMorty {
+  characters(filter: {}) {
+    info {
+      count
+    }
+    results {
+      id
+      name
+      image
+      origin{name}
+    }
+  }
+  location(id: 1) {
+    id
+  }
+  episodesByIds(ids: [1, 2]) {
+    id
+  }
+}
+
+query Rick {
+  characters(filter: { name: "rick"}) {
+    info {
+      count
+    }
+    results {
+      id
+      name
+      image
+      origin{name}
+    }
+  }
+  location(id: 1) {
+    id
+  }
+  episodesByIds(ids: [1, 2]) {
+    id
+  }
+}
+
+query Morty {
+  characters(filter: { name: "morty"}) {
+    info {
+      count
+    }
+    results {
+      id
+      name
+      image
+      origin{name}
+    }
+  }
+  location(id: 1) {
+    id
+  }
+  episodesByIds(ids: [1, 2]) {
+    id
+  }
+}

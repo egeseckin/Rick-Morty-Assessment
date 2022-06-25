@@ -36,6 +36,7 @@ extension tableViewforItems {
        self.addSubview(table)
        table.delegate = self
        table.dataSource = self
+       table.separatorStyle = .none
     }
 }
 

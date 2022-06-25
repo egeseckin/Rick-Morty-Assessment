@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Longinus
+import SnapKit
 
 class customTableViewCell: UITableViewCell{
     
     let image = UIImageView()
+    let cardView = UIView()
     let idStackView = UIStackView()
     let lblIdTitle = UILabel()
     let lblIdValue = UILabel()
@@ -33,28 +36,41 @@ class customTableViewCell: UITableViewCell{
     }
     
     func configureCell(){
-        self.layer.cornerRadius = 10
-        self.contentView.layer.cornerRadius = 2.0
-        self.contentView.layer.borderWidth = 1.0
-        self.contentView.layer.borderColor = UIColor.clear.cgColor
-        self.contentView.layer.masksToBounds = true
 
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        self.layer.shadowRadius = 10.0
-        self.layer.shadowOpacity = 0.2
-        self.layer.shouldRasterize = true
-        self.layer.masksToBounds = false
-        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-
-        
         addSubview(image)
-        addSubview(idStackView)
-        addSubview(nameStackView)
-        addSubview(locationStackView)
+        addSubview(cardView)
+        
+        cardView.addSubview(idStackView)
+        cardView.addSubview(nameStackView)
+        cardView.addSubview(locationStackView)
+        
+        cardView.snp.makeConstraints{ (make) in
+            make.top.equalTo(image.snp.bottom)
+            make.leading.equalToSuperview()
+            make.trailing.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
+        
+        
+        cardView.clipsToBounds = true
+        cardView.layer.cornerRadius = 10
+        cardView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
+        cardView.layer.masksToBounds = false
+        cardView.layer.shadowOffset = .zero
+        cardView.layer.shadowRadius = 5
+        cardView.layer.shadowOpacity = 1
+        cardView.backgroundColor = .white
+        cardView.layer.shadowPath = UIBezierPath(rect: bounds).cgPath
+        cardView.layer.shouldRasterize = true
+        cardView.layer.rasterizationScale = UIScreen.main.scale
+        
+        image.clipsToBounds = true
+        image.layer.cornerRadius = 10
+        image.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         
         //Image allignments
         image.clipsToBounds = true
+        image.contentMode = .scaleAspectFill
         image.snp.makeConstraints{ (make) in
             make.top.equalToSuperview()
             make.leading.equalToSuperview()
@@ -66,7 +82,6 @@ class customTableViewCell: UITableViewCell{
         lblIdTitle.text = "#id: "
         lblIdTitle.font = UIFont(name: "Roboto-Regular", size: 16.0)
 
-        lblIdValue.text = "1"
         lblIdValue.font = UIFont(name: "Roboto-Regular", size: 16.0)
         lblIdValue.textAlignment = .left
         lblIdValue.textColor = #colorLiteral(red: 0.5741509199, green: 0.5741508603, blue: 0.5741509199, alpha: 1) //colorLiteral
@@ -78,7 +93,7 @@ class customTableViewCell: UITableViewCell{
         idStackView.alignment = .fill
         idStackView.spacing = 0
         idStackView.snp.makeConstraints{ (make) in
-            make.top.equalTo(image.snp.bottom).offset(8)
+            make.top.equalToSuperview().offset(8)
             make.trailing.equalToSuperview().offset(-8)
         }
         
@@ -86,7 +101,6 @@ class customTableViewCell: UITableViewCell{
         lblNameTitle.text = "Name: "
         lblNameTitle.font = UIFont(name: "Roboto-Regular", size: 16.0)
 
-        lblNameValue.text = "Rick Sanchez"
         lblNameValue.font = UIFont(name: "Roboto-Regular", size: 16.0)
         lblNameValue.textAlignment = .left
         lblNameValue.textColor = #colorLiteral(red: 0.5741509199, green: 0.5741508603, blue: 0.5741509199, alpha: 1) //colorLiteral
@@ -106,7 +120,6 @@ class customTableViewCell: UITableViewCell{
         lblLocationTitle.text = "Location: "
         lblLocationTitle.font = UIFont(name: "Roboto-Regular", size: 16.0)
 
-        lblLocationValue.text = "Earth (Replacement Dimension)"
         lblLocationValue.font = UIFont(name: "Roboto-Regular", size: 16.0)
         lblLocationValue.textAlignment = .left
         lblLocationValue.textColor = #colorLiteral(red: 0.5741509199, green: 0.5741508603, blue: 0.5741509199, alpha: 1) //colorLiteral
@@ -121,12 +134,18 @@ class customTableViewCell: UITableViewCell{
             make.top.equalTo(nameStackView.snp.bottom).offset(8)
             make.leading.equalToSuperview().offset(14)
         }
-        
     }
 }
 
 extension customTableViewCell {
-    func setupCell(){
-        
+    func setupCell(data: RickAndMortyQuery.Data.Character.Result){
+        lblIdValue.text = data.id
+        lblNameValue.text = data.name
+        lblLocationValue.text = data.origin?.name ?? ""
+        if let characterImage = URL(string: data.image ?? ""){
+            DispatchQueue.main.async {
+                self.image.lg.setImage(with: characterImage)
+            }
+        }
     }
 }
