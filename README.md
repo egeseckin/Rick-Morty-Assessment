@@ -2,8 +2,7 @@
  
 Rick And Morty Assessment
 
-I builded a Rick And Morty character cards app which can be filtered to see only Rick or Morty.
-- Used Apollo(GrapQL) and SnapKit
+I builded a Rick And Morty character cards app which can be filtered to see only Rick or Morty. I used GrapQL and SnapKit without any previous knowledge.
 - Used Longinus for faster image renders
 - Created on Xcode 13.4.1
 - for iOS 15.0+
