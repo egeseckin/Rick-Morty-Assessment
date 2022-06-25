@@ -10,12 +10,32 @@
 		56C1CB362866127400D4F291 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB352866127400D4F291 /* AppDelegate.swift */; };
 		56C1CB382866127400D4F291 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB372866127400D4F291 /* SceneDelegate.swift */; };
 		56C1CB3A2866127400D4F291 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB392866127400D4F291 /* ViewController.swift */; };
-		56C1CB3D2866127400D4F291 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CB3B2866127400D4F291 /* Main.storyboard */; };
 		56C1CB3F2866127700D4F291 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CB3E2866127700D4F291 /* Assets.xcassets */; };
-		56C1CB422866127700D4F291 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CB402866127700D4F291 /* LaunchScreen.storyboard */; };
 		56C1CB4D2866127700D4F291 /* Rick_Morty_AssessmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB4C2866127700D4F291 /* Rick_Morty_AssessmentTests.swift */; };
 		56C1CB572866127700D4F291 /* Rick_Morty_AssessmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB562866127700D4F291 /* Rick_Morty_AssessmentUITests.swift */; };
 		56C1CB592866127700D4F291 /* Rick_Morty_AssessmentUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB582866127700D4F291 /* Rick_Morty_AssessmentUITestsLaunchTests.swift */; };
+		56C1CB66286614BA00D4F291 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB65286614BA00D4F291 /* ViewModel.swift */; };
+		56C1CB68286614C500D4F291 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB67286614C500D4F291 /* Model.swift */; };
+		56C1CB6A2866154C00D4F291 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CB692866154C00D4F291 /* LaunchScreen.storyboard */; };
+		56C1CB6C28661D1E00D4F291 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CB6B28661D1E00D4F291 /* Main.storyboard */; };
+		56C1CB7628661F1400D4F291 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 56C1CB7528661F1400D4F291 /* SnapKit */; };
+		56C1CB8528665A0D00D4F291 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CB7828665A0D00D4F291 /* Roboto-Medium.ttf */; };
+		56C1CB8628665A0D00D4F291 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CB7928665A0D00D4F291 /* Roboto-Light.ttf */; };
+		56C1CB8728665A0D00D4F291 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CB7A28665A0D00D4F291 /* Roboto-Regular.ttf */; };
+		56C1CB8828665A0D00D4F291 /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CB7B28665A0D00D4F291 /* Roboto-MediumItalic.ttf */; };
+		56C1CB8928665A0D00D4F291 /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CB7C28665A0D00D4F291 /* Roboto-ThinItalic.ttf */; };
+		56C1CB8A28665A0D00D4F291 /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CB7D28665A0D00D4F291 /* Roboto-BoldItalic.ttf */; };
+		56C1CB8B28665A0D00D4F291 /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CB7E28665A0D00D4F291 /* Roboto-LightItalic.ttf */; };
+		56C1CB8C28665A0D00D4F291 /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CB7F28665A0D00D4F291 /* Roboto-Italic.ttf */; };
+		56C1CB8D28665A0D00D4F291 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CB8028665A0D00D4F291 /* LICENSE.txt */; };
+		56C1CB8E28665A0D00D4F291 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CB8128665A0D00D4F291 /* Roboto-BlackItalic.ttf */; };
+		56C1CB8F28665A0D00D4F291 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CB8228665A0D00D4F291 /* Roboto-Bold.ttf */; };
+		56C1CB9028665A0D00D4F291 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CB8328665A0D00D4F291 /* Roboto-Thin.ttf */; };
+		56C1CB9128665A0D00D4F291 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CB8428665A0D00D4F291 /* Roboto-Black.ttf */; };
+		56C1CB932866619C00D4F291 /* tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB922866619C00D4F291 /* tableView.swift */; };
+		56C1CB952866D49300D4F291 /* customTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB942866D49300D4F291 /* customTableViewCell.swift */; };
+		56C1CBA42867073B00D4F291 /* Apollo in Frameworks */ = {isa = PBXBuildFile; productRef = 56C1CBA32867073B00D4F291 /* Apollo */; };
+		56C1CBA628670C6900D4F291 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CBA528670C6900D4F291 /* schema.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,20 +55,51 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		56C1CB7328661EE000D4F291 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		56C1CB322866127400D4F291 /* Rick-Morty-Assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick-Morty-Assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C1CB352866127400D4F291 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56C1CB372866127400D4F291 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		56C1CB392866127400D4F291 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		56C1CB3C2866127400D4F291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		56C1CB3E2866127700D4F291 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		56C1CB412866127700D4F291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56C1CB432866127700D4F291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56C1CB482866127700D4F291 /* Rick-Morty-AssessmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rick-Morty-AssessmentTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C1CB4C2866127700D4F291 /* Rick_Morty_AssessmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rick_Morty_AssessmentTests.swift; sourceTree = "<group>"; };
 		56C1CB522866127700D4F291 /* Rick-Morty-AssessmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rick-Morty-AssessmentUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C1CB562866127700D4F291 /* Rick_Morty_AssessmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rick_Morty_AssessmentUITests.swift; sourceTree = "<group>"; };
 		56C1CB582866127700D4F291 /* Rick_Morty_AssessmentUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rick_Morty_AssessmentUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		56C1CB65286614BA00D4F291 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		56C1CB67286614C500D4F291 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		56C1CB692866154C00D4F291 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		56C1CB6B28661D1E00D4F291 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		56C1CB7828665A0D00D4F291 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		56C1CB7928665A0D00D4F291 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		56C1CB7A28665A0D00D4F291 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		56C1CB7B28665A0D00D4F291 /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
+		56C1CB7C28665A0D00D4F291 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
+		56C1CB7D28665A0D00D4F291 /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		56C1CB7E28665A0D00D4F291 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
+		56C1CB7F28665A0D00D4F291 /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		56C1CB8028665A0D00D4F291 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		56C1CB8128665A0D00D4F291 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
+		56C1CB8228665A0D00D4F291 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		56C1CB8328665A0D00D4F291 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
+		56C1CB8428665A0D00D4F291 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		56C1CB922866619C00D4F291 /* tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableView.swift; sourceTree = "<group>"; };
+		56C1CB942866D49300D4F291 /* customTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customTableViewCell.swift; sourceTree = "<group>"; };
+		56C1CBA528670C6900D4F291 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +107,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56C1CB7628661F1400D4F291 /* SnapKit in Frameworks */,
+				56C1CBA42867073B00D4F291 /* Apollo in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,13 +152,18 @@
 		56C1CB342866127400D4F291 /* Rick-Morty-Assessment */ = {
 			isa = PBXGroup;
 			children = (
+				56C1CB992866D4AA00D4F291 /* ViewController */,
+				56C1CB982866D4A500D4F291 /* ViewModel */,
+				56C1CB972866D4A000D4F291 /* Model */,
+				56C1CB962866D49A00D4F291 /* View */,
 				56C1CB352866127400D4F291 /* AppDelegate.swift */,
 				56C1CB372866127400D4F291 /* SceneDelegate.swift */,
-				56C1CB392866127400D4F291 /* ViewController.swift */,
-				56C1CB3B2866127400D4F291 /* Main.storyboard */,
 				56C1CB3E2866127700D4F291 /* Assets.xcassets */,
-				56C1CB402866127700D4F291 /* LaunchScreen.storyboard */,
 				56C1CB432866127700D4F291 /* Info.plist */,
+				56C1CBA528670C6900D4F291 /* schema.json */,
+				56C1CB692866154C00D4F291 /* LaunchScreen.storyboard */,
+				56C1CB6B28661D1E00D4F291 /* Main.storyboard */,
+				56C1CB7728665A0D00D4F291 /* Roboto */,
 			);
 			path = "Rick-Morty-Assessment";
 			sourceTree = "<group>";
@@ -127,6 +185,59 @@
 			path = "Rick-Morty-AssessmentUITests";
 			sourceTree = "<group>";
 		};
+		56C1CB7728665A0D00D4F291 /* Roboto */ = {
+			isa = PBXGroup;
+			children = (
+				56C1CB7828665A0D00D4F291 /* Roboto-Medium.ttf */,
+				56C1CB7928665A0D00D4F291 /* Roboto-Light.ttf */,
+				56C1CB7A28665A0D00D4F291 /* Roboto-Regular.ttf */,
+				56C1CB7B28665A0D00D4F291 /* Roboto-MediumItalic.ttf */,
+				56C1CB7C28665A0D00D4F291 /* Roboto-ThinItalic.ttf */,
+				56C1CB7D28665A0D00D4F291 /* Roboto-BoldItalic.ttf */,
+				56C1CB7E28665A0D00D4F291 /* Roboto-LightItalic.ttf */,
+				56C1CB7F28665A0D00D4F291 /* Roboto-Italic.ttf */,
+				56C1CB8028665A0D00D4F291 /* LICENSE.txt */,
+				56C1CB8128665A0D00D4F291 /* Roboto-BlackItalic.ttf */,
+				56C1CB8228665A0D00D4F291 /* Roboto-Bold.ttf */,
+				56C1CB8328665A0D00D4F291 /* Roboto-Thin.ttf */,
+				56C1CB8428665A0D00D4F291 /* Roboto-Black.ttf */,
+			);
+			path = Roboto;
+			sourceTree = "<group>";
+		};
+		56C1CB962866D49A00D4F291 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				56C1CB942866D49300D4F291 /* customTableViewCell.swift */,
+				56C1CB922866619C00D4F291 /* tableView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56C1CB972866D4A000D4F291 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				56C1CB67286614C500D4F291 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		56C1CB982866D4A500D4F291 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				56C1CB65286614BA00D4F291 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		56C1CB992866D4AA00D4F291 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				56C1CB392866127400D4F291 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,12 +248,17 @@
 				56C1CB2E2866127400D4F291 /* Sources */,
 				56C1CB2F2866127400D4F291 /* Frameworks */,
 				56C1CB302866127400D4F291 /* Resources */,
+				56C1CB7328661EE000D4F291 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Rick-Morty-Assessment";
+			packageProductDependencies = (
+				56C1CB7528661F1400D4F291 /* SnapKit */,
+				56C1CBA32867073B00D4F291 /* Apollo */,
+			);
 			productName = "Rick-Morty-Assessment";
 			productReference = 56C1CB322866127400D4F291 /* Rick-Morty-Assessment.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +331,10 @@
 				Base,
 			);
 			mainGroup = 56C1CB292866127400D4F291;
+			packageReferences = (
+				56C1CB7428661F1400D4F291 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				56C1CBA22867073A00D4F291 /* XCRemoteSwiftPackageReference "apollo-ios" */,
+			);
 			productRefGroup = 56C1CB332866127400D4F291 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,9 +351,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56C1CB422866127700D4F291 /* LaunchScreen.storyboard in Resources */,
+				56C1CB8F28665A0D00D4F291 /* Roboto-Bold.ttf in Resources */,
+				56C1CB8D28665A0D00D4F291 /* LICENSE.txt in Resources */,
+				56C1CB8A28665A0D00D4F291 /* Roboto-BoldItalic.ttf in Resources */,
+				56C1CB8728665A0D00D4F291 /* Roboto-Regular.ttf in Resources */,
+				56C1CB8B28665A0D00D4F291 /* Roboto-LightItalic.ttf in Resources */,
+				56C1CB8528665A0D00D4F291 /* Roboto-Medium.ttf in Resources */,
 				56C1CB3F2866127700D4F291 /* Assets.xcassets in Resources */,
-				56C1CB3D2866127400D4F291 /* Main.storyboard in Resources */,
+				56C1CB8E28665A0D00D4F291 /* Roboto-BlackItalic.ttf in Resources */,
+				56C1CB9028665A0D00D4F291 /* Roboto-Thin.ttf in Resources */,
+				56C1CB8628665A0D00D4F291 /* Roboto-Light.ttf in Resources */,
+				56C1CB8928665A0D00D4F291 /* Roboto-ThinItalic.ttf in Resources */,
+				56C1CB9128665A0D00D4F291 /* Roboto-Black.ttf in Resources */,
+				56C1CBA628670C6900D4F291 /* schema.json in Resources */,
+				56C1CB8828665A0D00D4F291 /* Roboto-MediumItalic.ttf in Resources */,
+				56C1CB6C28661D1E00D4F291 /* Main.storyboard in Resources */,
+				56C1CB8C28665A0D00D4F291 /* Roboto-Italic.ttf in Resources */,
+				56C1CB6A2866154C00D4F291 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +392,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56C1CB68286614C500D4F291 /* Model.swift in Sources */,
 				56C1CB3A2866127400D4F291 /* ViewController.swift in Sources */,
 				56C1CB362866127400D4F291 /* AppDelegate.swift in Sources */,
+				56C1CB952866D49300D4F291 /* customTableViewCell.swift in Sources */,
+				56C1CB66286614BA00D4F291 /* ViewModel.swift in Sources */,
 				56C1CB382866127400D4F291 /* SceneDelegate.swift in Sources */,
+				56C1CB932866619C00D4F291 /* tableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,25 +433,6 @@
 			targetProxy = 56C1CB532866127700D4F291 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		56C1CB3B2866127400D4F291 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				56C1CB3C2866127400D4F291 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		56C1CB402866127700D4F291 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				56C1CB412866127700D4F291 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		56C1CB5A2866127700D4F291 /* Debug */ = {
@@ -366,7 +485,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -420,7 +539,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -442,9 +561,9 @@
 				INFOPLIST_FILE = "Rick-Morty-Assessment/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,9 +589,9 @@
 				INFOPLIST_FILE = "Rick-Morty-Assessment/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -602,6 +721,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		56C1CB7428661F1400D4F291 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		56C1CBA22867073A00D4F291 /* XCRemoteSwiftPackageReference "apollo-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apollographql/apollo-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		56C1CB7528661F1400D4F291 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 56C1CB7428661F1400D4F291 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		56C1CBA32867073B00D4F291 /* Apollo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 56C1CBA22867073A00D4F291 /* XCRemoteSwiftPackageReference "apollo-ios" */;
+			productName = Apollo;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 56C1CB2A2866127400D4F291 /* Project object */;
 }
