@@ -19,4 +19,4 @@ About the app:
 - User can scroll until the end of character count.
 - Characters can be filtered between Rick and Morty
 
-[RocketSim_Recording_iPhone_13_2022-06-26_01 06 55](https://user-images.githubusercontent.com/20578545/175791824-8569e930-9fe1-40ba-afbc-eed1a0ebe619.gif)
+![RocketSim_Recording_iPhone_13_2022-06-26_01 06 55](https://user-images.githubusercontent.com/20578545/175791856-5f0ae0a0-77ec-4e8b-98bb-01cf98f8d3be.gif)
