@@ -14,12 +14,17 @@ protocol viewModelDelegate: AnyObject{
 class viewModel {
     var characterData = [RickAndMortyQuery.Data.Character.Result]()
     var page: Int = 1
+    var oldName: String?
     
     weak var delegate: viewModelDelegate?
     
-    func loadData() {
-        
-        Network.shared.apollo.fetch(query: RickAndMortyQuery(page: page)) { result in
+    func loadData(name: String?) {
+        if oldName != name{
+            oldName = name
+            characterData = []
+            page = 1
+        }
+        Network.shared.apollo.fetch(query: RickAndMortyQuery(page: page, name: name ?? "")) { result in
             switch result {
             case .success(let graphQLResult):
                 if let info = graphQLResult.data?.characters?.info{

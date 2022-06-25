@@ -10,8 +10,8 @@
 		5672AC552867153900B3A335 /* Queries.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 5672AC542867153900B3A335 /* Queries.graphql */; };
 		5672AC572867176700B3A335 /* schema.json in Resources */ = {isa = PBXBuildFile; fileRef = 5672AC562867176700B3A335 /* schema.json */; };
 		5672AC59286717DB00B3A335 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672AC58286717DB00B3A335 /* API.swift */; };
-		5672AC5B28673CBA00B3A335 /* imageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672AC5A28673CBA00B3A335 /* imageModel.swift */; };
 		5672AC5E2867446C00B3A335 /* Longinus in Frameworks */ = {isa = PBXBuildFile; productRef = 5672AC5D2867446C00B3A335 /* Longinus */; };
+		5672AC6028679C1200B3A335 /* filterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672AC5F28679C1200B3A335 /* filterView.swift */; };
 		56C1CB362866127400D4F291 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB352866127400D4F291 /* AppDelegate.swift */; };
 		56C1CB382866127400D4F291 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB372866127400D4F291 /* SceneDelegate.swift */; };
 		56C1CB3A2866127400D4F291 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB392866127400D4F291 /* ViewController.swift */; };
@@ -22,7 +22,6 @@
 		56C1CB66286614BA00D4F291 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB65286614BA00D4F291 /* ViewModel.swift */; };
 		56C1CB68286614C500D4F291 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB67286614C500D4F291 /* Model.swift */; };
 		56C1CB6A2866154C00D4F291 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CB692866154C00D4F291 /* LaunchScreen.storyboard */; };
-		56C1CB6C28661D1E00D4F291 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CB6B28661D1E00D4F291 /* Main.storyboard */; };
 		56C1CB7628661F1400D4F291 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 56C1CB7528661F1400D4F291 /* SnapKit */; };
 		56C1CB8528665A0D00D4F291 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CB7828665A0D00D4F291 /* Roboto-Medium.ttf */; };
 		56C1CB8628665A0D00D4F291 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 56C1CB7928665A0D00D4F291 /* Roboto-Light.ttf */; };
@@ -77,7 +76,7 @@
 		5672AC542867153900B3A335 /* Queries.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = Queries.graphql; sourceTree = "<group>"; };
 		5672AC562867176700B3A335 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		5672AC58286717DB00B3A335 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = "Rick-Morty-Assessment/API.swift"; sourceTree = SOURCE_ROOT; };
-		5672AC5A28673CBA00B3A335 /* imageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageModel.swift; sourceTree = "<group>"; };
+		5672AC5F28679C1200B3A335 /* filterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterView.swift; sourceTree = "<group>"; };
 		56C1CB322866127400D4F291 /* Rick-Morty-Assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick-Morty-Assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C1CB352866127400D4F291 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56C1CB372866127400D4F291 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,7 +91,6 @@
 		56C1CB65286614BA00D4F291 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		56C1CB67286614C500D4F291 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		56C1CB692866154C00D4F291 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		56C1CB6B28661D1E00D4F291 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		56C1CB7828665A0D00D4F291 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		56C1CB7928665A0D00D4F291 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		56C1CB7A28665A0D00D4F291 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 				56C1CB3E2866127700D4F291 /* Assets.xcassets */,
 				56C1CB432866127700D4F291 /* Info.plist */,
 				56C1CB692866154C00D4F291 /* LaunchScreen.storyboard */,
-				56C1CB6B28661D1E00D4F291 /* Main.storyboard */,
 				56C1CBA728670CCE00D4F291 /* GraphQL */,
 				56C1CB7728665A0D00D4F291 /* Roboto */,
 			);
@@ -221,6 +218,7 @@
 			children = (
 				56C1CB942866D49300D4F291 /* customTableViewCell.swift */,
 				56C1CB922866619C00D4F291 /* tableView.swift */,
+				5672AC5F28679C1200B3A335 /* filterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -229,7 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				56C1CB67286614C500D4F291 /* Model.swift */,
-				5672AC5A28673CBA00B3A335 /* imageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -391,7 +388,6 @@
 				56C1CB9128665A0D00D4F291 /* Roboto-Black.ttf in Resources */,
 				5672AC552867153900B3A335 /* Queries.graphql in Resources */,
 				56C1CB8828665A0D00D4F291 /* Roboto-MediumItalic.ttf in Resources */,
-				56C1CB6C28661D1E00D4F291 /* Main.storyboard in Resources */,
 				56C1CB8C28665A0D00D4F291 /* Roboto-Italic.ttf in Resources */,
 				56C1CB6A2866154C00D4F291 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -440,10 +436,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				56C1CB68286614C500D4F291 /* Model.swift in Sources */,
-				5672AC5B28673CBA00B3A335 /* imageModel.swift in Sources */,
 				56C1CB3A2866127400D4F291 /* ViewController.swift in Sources */,
 				56C1CB362866127400D4F291 /* AppDelegate.swift in Sources */,
 				56C1CB952866D49300D4F291 /* customTableViewCell.swift in Sources */,
+				5672AC6028679C1200B3A335 /* filterView.swift in Sources */,
 				56C1CB66286614BA00D4F291 /* ViewModel.swift in Sources */,
 				56C1CB382866127400D4F291 /* SceneDelegate.swift in Sources */,
 				56C1CBA928670CDA00D4F291 /* Apollo.swift in Sources */,

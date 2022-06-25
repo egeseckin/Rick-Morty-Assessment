@@ -8,8 +8,8 @@ public final class RickAndMortyQuery: GraphQLQuery {
   /// The raw GraphQL definition of this operation.
   public let operationDefinition: String =
     """
-    query RickAndMorty($page: Int!) {
-      characters(page: $page, filter: {}) {
+    query RickAndMorty($page: Int!, $name: String!) {
+      characters(page: $page, filter: {name: $name}) {
         __typename
         info {
           __typename
@@ -33,13 +33,15 @@ public final class RickAndMortyQuery: GraphQLQuery {
   public let operationName: String = "RickAndMorty"
 
   public var page: Int
+  public var name: String
 
-  public init(page: Int) {
+  public init(page: Int, name: String) {
     self.page = page
+    self.name = name
   }
 
   public var variables: GraphQLMap? {
-    return ["page": page]
+    return ["page": page, "name": name]
   }
 
   public struct Data: GraphQLSelectionSet {
@@ -47,7 +49,7 @@ public final class RickAndMortyQuery: GraphQLQuery {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("characters", arguments: ["page": GraphQLVariable("page"), "filter": [:]], type: .object(Character.selections)),
+        GraphQLField("characters", arguments: ["page": GraphQLVariable("page"), "filter": ["name": GraphQLVariable("name")]], type: .object(Character.selections)),
       ]
     }
 

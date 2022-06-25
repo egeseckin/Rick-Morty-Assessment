@@ -7,15 +7,3 @@
 
 import Foundation
 
-// MARK: - Result
-struct Result: Codable {
-    let id: String
-    let name: String
-    let origin: Location
-    let image: String
-}
-
-// MARK: - Location
-struct Location: Codable {
-    let name: String
-}

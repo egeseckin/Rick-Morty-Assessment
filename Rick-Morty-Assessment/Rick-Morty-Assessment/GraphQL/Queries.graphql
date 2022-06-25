@@ -1,5 +1,5 @@
-query RickAndMorty ($page: Int!){
-  characters(page: $page, filter: {}) {
+query RickAndMorty ($page: Int!, $name: String!){
+  characters(page: $page, filter: {name: $name}) {
     info {
       count
       pages

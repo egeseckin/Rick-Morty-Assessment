@@ -12,19 +12,21 @@ class ViewController: UIViewController {
     fileprivate var hideBackground: UIView?
     
     let tableView: UITableView = UITableView()
-    var characterCount = 0
+    private var characterCount = 0
+    private var rickSelected = false
+    private var mortySelected = false
     
     lazy var model = {
         viewModel()
     }()
     
     var data = [RickAndMortyQuery.Data.Character.Result]()
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         model.delegate = self
-        model.loadData()
+        model.loadData(name: "")
         setupUI()
     }
     
@@ -41,7 +43,6 @@ class ViewController: UIViewController {
         }()
         
         self.view.addSubview(label)
-        
         label.snp.makeConstraints{ (m) in
             m.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin).offset(28)
             m.centerX.equalToSuperview()
@@ -58,14 +59,12 @@ class ViewController: UIViewController {
             return filter
         }()
         
-        
         self.view.addSubview(filterButton)
         filterButton.snp.makeConstraints{ (m) in
             m.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin).offset(26)
             m.trailing.equalToSuperview().offset(-24)
         }
         
-
         //for tableview adjustments
         tableView.delegate = self
         tableView.dataSource = self
@@ -87,7 +86,24 @@ class ViewController: UIViewController {
 
 private extension ViewController {
     @objc private func filterTapped(){
-        print("Tapped")
+        let filterView = filterView.init(frame: self.view.bounds, rickSelected: self.rickSelected, mortySelected: self.mortySelected)
+        view.addSubview(filterView)
+        filterView.delegate = self
+    }
+}
+
+extension ViewController: filterViewDelegate {
+    func didRickSelected() {
+        rickSelected = true
+        mortySelected = false
+        model.loadData(name: "rick")
+        tableView.setContentOffset(.zero, animated: false)
+    }
+    func didMortySelected() {
+        rickSelected = false
+        mortySelected = true
+        model.loadData(name: "morty")
+        tableView.setContentOffset(.zero, animated: false)
     }
 }
 
@@ -119,8 +135,13 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let height = scrollView.frame.size.height
         
         if offSetY > contentHeight - height * 1.75  {
-                self.model.loadData()
-        }
+            if rickSelected {
+                self.model.loadData(name: "rick")
+            }else if mortySelected {
+                self.model.loadData(name: "morty")
+            }else{
+                self.model.loadData(name: "")
+            }        }
     }
 }
 
