@@ -8,48 +8,79 @@
 import UIKit
 import SnapKit
 
+protocol tableViewforItemsDelegate: AnyObject {
+    func filterItem(filter: Int?)
+}
+
 class tableViewforItems: UIView {
 
-    let table: UITableView = {
-        let createdTable = UITableView()
-        createdTable.translatesAutoresizingMaskIntoConstraints = false
-        return createdTable
-    }()
+    private let tableView = UITableView()
+    private var data = [RickAndMortyQuery.Data.Character.Result]()
+    private var rickSelected: Bool?
+    private var mortySelected: Bool?
 
+    weak var delegate: tableViewforItemsDelegate?
     override init(frame: CGRect) {
         super.init(frame: frame)
-
         setupTableView()
-
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-}
-
-extension tableViewforItems {
-   func setupTableView() {
-       table.register(UITableViewCell.self, forCellReuseIdentifier: "cellReuseIdentifier")
-       self.addSubview(table)
-       table.delegate = self
-       table.dataSource = self
+    func dataTaken(data: [RickAndMortyQuery.Data.Character.Result]?, rickSelected: Bool?, mortySelected: Bool?) {
+        guard let dataTaken = data,
+              let filterRick = rickSelected,
+              let filterMorty = mortySelected else { return }
+        self.data = dataTaken
+        self.rickSelected = filterRick
+        self.mortySelected = filterMorty
+        tableView.reloadData()
     }
 }
+extension tableViewforItems {
+    func goToTop() {
+        tableView.setContentOffset(.zero, animated: false)
+    }
+}
+private extension tableViewforItems {
+   private func setupTableView() {
+       tableView.delegate = self
+       tableView.dataSource = self
+       tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+       tableView.showsVerticalScrollIndicator = false
+       tableView.showsHorizontalScrollIndicator = false
+       tableView.register(customTableViewCell.self, forCellReuseIdentifier: "customCell")
+       tableView.allowsSelection = false
 
+       self.addSubview(tableView)
+       tableView.snp.makeConstraints {(make) in
+           make.edges.equalToSuperview()
+       }
+   }
+}
+
+// MARK: tableView adjustments
 extension tableViewforItems: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return data.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = table.dequeueReusableCell(withIdentifier: "cellReuseIdentifier", for: indexPath) as? customTableViewCell {
-            // let image = UIImage(named: "imgFilter")
-            // cell.setupCell(image: image)
-            return cell
-        }
-        fatalError("could not dequesReusableCell")
-    }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! customTableViewCell
+        let currentData = data[indexPath.row]
+        cell.setupCell(data: currentData)
 
+        // Prefetching for infinite scroll
+        if currentData.id == (data[data.endIndex-3].id) {
+            if rickSelected ?? false {
+                delegate?.filterItem(filter: 1)
+            } else if mortySelected ?? false {
+                delegate?.filterItem(filter: 2)
+            } else {
+                delegate?.filterItem(filter: 0)            }
+        }
+        return cell
+    }
 }

@@ -155,7 +155,7 @@ private extension customTableViewCell {
         cardView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
 
         cardView.layer.shadowOffset = CGSize(width: 0, height: 6)
-        cardView.layer.shadowRadius = 3
+        cardView.layer.shadowRadius = 4
         cardView.layer.shadowOpacity = 0.1
         cardView.backgroundColor = .white
         cardView.layer.masksToBounds = false

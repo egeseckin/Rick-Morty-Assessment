@@ -31,6 +31,7 @@ class filterView: UIView {
         super.init(frame: frame)
 
     }
+
     weak var delegate: filterViewDelegate?
 
     init(frame: CGRect, rickSelected: Bool?, mortySelected: Bool?) {
@@ -39,6 +40,7 @@ class filterView: UIView {
         self.mortySelected = mortySelected
         setupUI()
     }
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -54,8 +56,8 @@ class filterView: UIView {
         background.addGestureRecognizer(tap)
 
         filterSetup()
-
     }
+
     @objc private func dismissTapped() {
         self.removeFromSuperview()
     }
@@ -127,8 +129,9 @@ private extension filterView {
 
 // MARK: Label Adjustments
 private extension filterView {
+
+    // Rick Label
     private func rickViewAdjustments() {
-        // Rick Label
         lblRick.text = "Rick"
         lblRick.font = UIFont(name: "Roboto-Regular", size: 24.0)
         rickStackView.addArrangedSubview(lblRick)
