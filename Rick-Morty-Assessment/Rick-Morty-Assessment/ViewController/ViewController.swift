@@ -9,63 +9,59 @@ import UIKit
 import SnapKit
 
 class ViewController: UIViewController {
+
     fileprivate var hideBackground: UIView?
-    
-    let tableView: UITableView = UITableView()
+
+    private let lblTitle = UILabel()
+    private let tableView = UITableView()
+    private let filterButton = UIButton()
+
     private var characterCount = 0
     private var rickSelected = false
     private var mortySelected = false
-    
+
     lazy var model = {
         viewModel()
     }()
-    
+
     var data = [RickAndMortyQuery.Data.Character.Result]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        model.delegate = self
         model.loadData(name: "")
         setupUI()
     }
-    
-    private func setupUI(){
-        
-        //title view adjustments
-        let label: UILabel = {
-            let title = UILabel()
-            title.textAlignment = .center
-            title.text = "Rick and Morty"
-            title.font = UIFont(name: "Roboto-Bold", size: 24.0)
-            
-            return title
-        }()
-        
-        self.view.addSubview(label)
-        label.snp.makeConstraints{ (m) in
+
+    private func setupUI() {
+
+        view.addSubview(lblTitle)
+        view.addSubview(filterButton)
+        view.addSubview(tableView)
+
+        // title view adjustments
+        lblTitle.textAlignment = .center
+        lblTitle.text = "Rick and Morty"
+        lblTitle.font = UIFont(name: "Roboto-Bold", size: 24.0)
+
+        lblTitle.snp.makeConstraints { (m) in
             m.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin).offset(28)
             m.centerX.equalToSuperview()
         }
-        
-        //for sort button adjustments
-        let filterButton: UIButton = {
-            let filter = UIButton()
-            let filterImage = UIImage(named: "imgFilter")
-            filter.setImage(filterImage, for: .normal)
-            filter.isUserInteractionEnabled = true
-            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(filterTapped))
-            filter.addGestureRecognizer(tapGesture)
-            return filter
-        }()
-        
-        self.view.addSubview(filterButton)
-        filterButton.snp.makeConstraints{ (m) in
+
+        // for sort button adjustments
+        let filterImage = UIImage(named: "imgFilter")
+        filterButton.setImage(filterImage, for: .normal)
+        filterButton.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(filterTapped))
+        filterButton.addGestureRecognizer(tapGesture)
+
+        filterButton.snp.makeConstraints { (m) in
             m.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin).offset(26)
             m.trailing.equalToSuperview().offset(-24)
         }
-        
-        //for tableview adjustments
+
+        // for tableview adjustments
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
@@ -73,25 +69,28 @@ class ViewController: UIViewController {
         tableView.showsHorizontalScrollIndicator = false
         tableView.register(customTableViewCell.self, forCellReuseIdentifier: "customCell")
         tableView.allowsSelection = false
-        view.addSubview(tableView)
-        
-        tableView.snp.makeConstraints{ (make) in
-            make.top.equalTo(label.snp.bottomMargin).offset(22)
+        tableView.snp.makeConstraints { (make) in
+            make.top.equalTo(lblTitle.snp.bottomMargin).offset(22)
             make.leading.equalToSuperview().offset(19) // +5 goes to shadow in cell
             make.trailing.equalToSuperview().offset(-19) // +5 goes to shadow in cell
             make.bottom.equalToSuperview()
+        }
+        model.dataTaken = { [weak self] data in
+            self?.data = data
+            self?.tableView.reloadData()
         }
     }
 }
 
 private extension ViewController {
-    @objc private func filterTapped(){
+    @objc private func filterTapped() {
         let filterView = filterView.init(frame: self.view.bounds, rickSelected: self.rickSelected, mortySelected: self.mortySelected)
         view.addSubview(filterView)
         filterView.delegate = self
     }
 }
 
+// MARK: Filter Delegate
 extension ViewController: filterViewDelegate {
     func didRickSelected() {
         rickSelected = true
@@ -107,19 +106,12 @@ extension ViewController: filterViewDelegate {
     }
 }
 
-extension ViewController: viewModelDelegate {
-    func dataModel(data: [RickAndMortyQuery.Data.Character.Result]) {
-        self.data = data
-        tableView.reloadData()
-    }
-}
-
-//MARK: tableView adjustments
+// MARK: tableView adjustments
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! customTableViewCell
         cell.setupCell(data: data[indexPath.row])
@@ -128,22 +120,19 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 281.0 // +16 for empty view inside cell for spacing tableview
     }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let offSetY = scrollView.contentOffset.y
         let contentHeight = scrollView.contentSize.height
         let height = scrollView.frame.size.height
-        
-        if offSetY > contentHeight - height * 1.75  {
+
+        if offSetY > contentHeight - height * 1.8 {
             if rickSelected {
                 self.model.loadData(name: "rick")
-            }else if mortySelected {
+            } else if mortySelected {
                 self.model.loadData(name: "morty")
-            }else{
+            } else {
                 self.model.loadData(name: "")
-            }        }
+            }
+        }
     }
 }
-
-
-

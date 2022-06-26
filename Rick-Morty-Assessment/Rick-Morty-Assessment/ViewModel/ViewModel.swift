@@ -7,19 +7,14 @@
 
 import Foundation
 
-protocol viewModelDelegate: AnyObject{
-    func dataModel(data: [RickAndMortyQuery.Data.Character.Result])
-}
-
 class viewModel {
-    var characterData = [RickAndMortyQuery.Data.Character.Result]()
-    var page: Int = 1
-    var oldName: String?
-    
-    weak var delegate: viewModelDelegate?
-    
+    private var characterData = [RickAndMortyQuery.Data.Character.Result]()
+    private var page: Int = 1
+    private var oldName: String?
+    var dataTaken: (([RickAndMortyQuery.Data.Character.Result]) -> Void)?
+
     func loadData(name: String?) {
-        if oldName != name{
+        if oldName != name {
             oldName = name
             characterData = []
             page = 1
@@ -27,18 +22,18 @@ class viewModel {
         Network.shared.apollo.fetch(query: RickAndMortyQuery(page: page, name: name ?? "")) { result in
             switch result {
             case .success(let graphQLResult):
-                if let info = graphQLResult.data?.characters?.info{
+                if let info = graphQLResult.data?.characters?.info {
                     if let pageNumber = info.pages {
                         if  self.page <= pageNumber {
                             self.page += 1
-                        }else{
+                        } else {
                             break
                         }
                     }
                 }
-                if let results = graphQLResult.data?.characters?.results{
+                if let results = graphQLResult.data?.characters?.results {
                     self.characterData.append(contentsOf: results.compactMap { $0 })
-                    self.delegate?.dataModel(data: self.characterData)
+                    self.dataTaken?(self.characterData)
                 }
             case .failure(let error):
                 print("Failure! Error: \(error)")
