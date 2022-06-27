@@ -9,17 +9,25 @@ import XCTest
 @testable import Rick_Morty_Assessment
 
 class dataParseTest: XCTestCase {
-    private var model: tableViewforItems!
-    let characterData: [RickAndMortyQuery.Data.Character.Result] = [
-        RickAndMortyQuery.Data.Character.Result.init(id: "1", name: "Rick Sanchez", image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg", location: RickAndMortyQuery.Data.Character.Result.Location( name: "Earth (Replacement Dimension)"))
-        ]
-    var bundle: Bundle!
-    
-    override func setUp() {
-        bundle = Bundle(for: dataParseTest.self)
-    }
-    
-    func testCanParseCharacter() throws {
 
+    func testCanParseCharacter() {
+        let characterData = RickAndMortyQuery.Data.Character.Result(id: "1",
+                                                                    name: "Rick Sanchez",
+                                                                    image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+                                                                    location: RickAndMortyQuery.Data.Character.Result.Location(name: "Citadel of Ricks"))
+
+        Network.shared.apollo.fetch(query: RickAndMortyQuery(page: 1, name: "")) { result in
+
+            switch result {
+
+            case .success(let graphQLResult):
+                if let response = graphQLResult.data?.characters?.results {
+                    XCTAssertEqual(characterData.id, response[0]?.id)
+                }
+
+            case .failure(let error):
+                XCTFail("Failure! Error: \(error)")
+            }
+        }
     }
 }
