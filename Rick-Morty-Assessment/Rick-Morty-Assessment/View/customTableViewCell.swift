@@ -58,7 +58,7 @@ extension customTableViewCell {
      func setupCell(data: RickAndMortyQuery.Data.Character.Result) {
         lblIdValue.text = data.id
         lblNameValue.text = data.name
-        lblLocationValue.text = data.origin?.name ?? ""
+        lblLocationValue.text = data.location?.name ?? ""
         if let characterImage = URL(string: data.image ?? "") {
             DispatchQueue.main.async {
                 self.image.lg.setImage(with: characterImage)

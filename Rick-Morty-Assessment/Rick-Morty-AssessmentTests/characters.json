@@ -1,0 +1,172 @@
+{
+  "data": {
+    "characters": {
+      "info": {
+        "count": 826,
+        "pages": 42
+      },
+      "results": [
+        {
+          "id": "1",
+          "name": "Rick Sanchez",
+          "image": "https://rickandmortyapi.com/api/character/avatar/1.jpeg",
+          "origin": {
+            "name": "Earth (C-137)"
+          }
+        },
+        {
+          "id": "2",
+          "name": "Morty Smith",
+          "image": "https://rickandmortyapi.com/api/character/avatar/2.jpeg",
+          "origin": {
+            "name": "unknown"
+          }
+        },
+        {
+          "id": "3",
+          "name": "Summer Smith",
+          "image": "https://rickandmortyapi.com/api/character/avatar/3.jpeg",
+          "origin": {
+            "name": "Earth (Replacement Dimension)"
+          }
+        },
+        {
+          "id": "4",
+          "name": "Beth Smith",
+          "image": "https://rickandmortyapi.com/api/character/avatar/4.jpeg",
+          "origin": {
+            "name": "Earth (Replacement Dimension)"
+          }
+        },
+        {
+          "id": "5",
+          "name": "Jerry Smith",
+          "image": "https://rickandmortyapi.com/api/character/avatar/5.jpeg",
+          "origin": {
+            "name": "Earth (Replacement Dimension)"
+          }
+        },
+        {
+          "id": "6",
+          "name": "Abadango Cluster Princess",
+          "image": "https://rickandmortyapi.com/api/character/avatar/6.jpeg",
+          "origin": {
+            "name": "Abadango"
+          }
+        },
+        {
+          "id": "7",
+          "name": "Abradolf Lincler",
+          "image": "https://rickandmortyapi.com/api/character/avatar/7.jpeg",
+          "origin": {
+            "name": "Earth (Replacement Dimension)"
+          }
+        },
+        {
+          "id": "8",
+          "name": "Adjudicator Rick",
+          "image": "https://rickandmortyapi.com/api/character/avatar/8.jpeg",
+          "origin": {
+            "name": "unknown"
+          }
+        },
+        {
+          "id": "9",
+          "name": "Agency Director",
+          "image": "https://rickandmortyapi.com/api/character/avatar/9.jpeg",
+          "origin": {
+            "name": "Earth (Replacement Dimension)"
+          }
+        },
+        {
+          "id": "10",
+          "name": "Alan Rails",
+          "image": "https://rickandmortyapi.com/api/character/avatar/10.jpeg",
+          "origin": {
+            "name": "unknown"
+          }
+        },
+        {
+          "id": "11",
+          "name": "Albert Einstein",
+          "image": "https://rickandmortyapi.com/api/character/avatar/11.jpeg",
+          "origin": {
+            "name": "Earth (C-137)"
+          }
+        },
+        {
+          "id": "12",
+          "name": "Alexander",
+          "image": "https://rickandmortyapi.com/api/character/avatar/12.jpeg",
+          "origin": {
+            "name": "Earth (C-137)"
+          }
+        },
+        {
+          "id": "13",
+          "name": "Alien Googah",
+          "image": "https://rickandmortyapi.com/api/character/avatar/13.jpeg",
+          "origin": {
+            "name": "unknown"
+          }
+        },
+        {
+          "id": "14",
+          "name": "Alien Morty",
+          "image": "https://rickandmortyapi.com/api/character/avatar/14.jpeg",
+          "origin": {
+            "name": "unknown"
+          }
+        },
+        {
+          "id": "15",
+          "name": "Alien Rick",
+          "image": "https://rickandmortyapi.com/api/character/avatar/15.jpeg",
+          "origin": {
+            "name": "unknown"
+          }
+        },
+        {
+          "id": "16",
+          "name": "Amish Cyborg",
+          "image": "https://rickandmortyapi.com/api/character/avatar/16.jpeg",
+          "origin": {
+            "name": "unknown"
+          }
+        },
+        {
+          "id": "17",
+          "name": "Annie",
+          "image": "https://rickandmortyapi.com/api/character/avatar/17.jpeg",
+          "origin": {
+            "name": "Earth (C-137)"
+          }
+        },
+        {
+          "id": "18",
+          "name": "Antenna Morty",
+          "image": "https://rickandmortyapi.com/api/character/avatar/18.jpeg",
+          "origin": {
+            "name": "unknown"
+          }
+        },
+        {
+          "id": "19",
+          "name": "Antenna Rick",
+          "image": "https://rickandmortyapi.com/api/character/avatar/19.jpeg",
+          "origin": {
+            "name": "unknown"
+          }
+        },
+        {
+          "id": "20",
+          "name": "Ants in my Eyes Johnson",
+          "image": "https://rickandmortyapi.com/api/character/avatar/20.jpeg",
+          "origin": {
+            "name": "unknown"
+          }
+        }
+      ]
+    }
+  }
+}

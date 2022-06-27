@@ -21,7 +21,7 @@ public final class RickAndMortyQuery: GraphQLQuery {
           id
           name
           image
-          origin {
+          location {
             __typename
             name
           }
@@ -49,7 +49,7 @@ public final class RickAndMortyQuery: GraphQLQuery {
 
     public static var selections: [GraphQLSelection] {
       return [
-        GraphQLField("characters", arguments: ["page": GraphQLVariable("page"), "filter": ["name": GraphQLVariable("name")]], type: .object(Character.selections))
+        GraphQLField("characters", arguments: ["page": GraphQLVariable("page"), "filter": ["name": GraphQLVariable("name")]], type: .object(Character.selections)),
       ]
     }
 
@@ -80,7 +80,7 @@ public final class RickAndMortyQuery: GraphQLQuery {
         return [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("info", type: .object(Info.selections)),
-          GraphQLField("results", type: .list(.object(Result.selections)))
+          GraphQLField("results", type: .list(.object(Result.selections))),
         ]
       }
 
@@ -128,7 +128,7 @@ public final class RickAndMortyQuery: GraphQLQuery {
           return [
             GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
             GraphQLField("count", type: .scalar(Int.self)),
-            GraphQLField("pages", type: .scalar(Int.self))
+            GraphQLField("pages", type: .scalar(Int.self)),
           ]
         }
 
@@ -181,7 +181,7 @@ public final class RickAndMortyQuery: GraphQLQuery {
             GraphQLField("id", type: .scalar(GraphQLID.self)),
             GraphQLField("name", type: .scalar(String.self)),
             GraphQLField("image", type: .scalar(String.self)),
-            GraphQLField("origin", type: .object(Origin.selections))
+            GraphQLField("location", type: .object(Location.selections)),
           ]
         }
 
@@ -191,8 +191,8 @@ public final class RickAndMortyQuery: GraphQLQuery {
           self.resultMap = unsafeResultMap
         }
 
-        public init(id: GraphQLID? = nil, name: String? = nil, image: String? = nil, origin: Origin? = nil) {
-          self.init(unsafeResultMap: ["__typename": "Character", "id": id, "name": name, "image": image, "origin": origin.flatMap { (value: Origin) -> ResultMap in value.resultMap }])
+        public init(id: GraphQLID? = nil, name: String? = nil, image: String? = nil, location: Location? = nil) {
+          self.init(unsafeResultMap: ["__typename": "Character", "id": id, "name": name, "image": image, "location": location.flatMap { (value: Location) -> ResultMap in value.resultMap }])
         }
 
         public var __typename: String {
@@ -235,23 +235,23 @@ public final class RickAndMortyQuery: GraphQLQuery {
           }
         }
 
-        /// The character's origin location
-        public var origin: Origin? {
+        /// The character's last known location
+        public var location: Location? {
           get {
-            return (resultMap["origin"] as? ResultMap).flatMap { Origin(unsafeResultMap: $0) }
+            return (resultMap["location"] as? ResultMap).flatMap { Location(unsafeResultMap: $0) }
           }
           set {
-            resultMap.updateValue(newValue?.resultMap, forKey: "origin")
+            resultMap.updateValue(newValue?.resultMap, forKey: "location")
           }
         }
 
-        public struct Origin: GraphQLSelectionSet {
+        public struct Location: GraphQLSelectionSet {
           public static let possibleTypes: [String] = ["Location"]
 
           public static var selections: [GraphQLSelection] {
             return [
               GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
-              GraphQLField("name", type: .scalar(String.self))
+              GraphQLField("name", type: .scalar(String.self)),
             ]
           }
 

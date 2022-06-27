@@ -16,8 +16,10 @@ class tableViewforItems: UIView {
 
     private let tableView = UITableView()
     private var data = [RickAndMortyQuery.Data.Character.Result]()
-    private var rickSelected: Bool?
-    private var mortySelected: Bool?
+    private(set) var rickSelected: Bool?
+    private(set) var mortySelected: Bool?
+    private(set) var totalPage: Int?
+    private(set) var currentPage: Int?
 
     weak var delegate: tableViewforItemsDelegate?
     override init(frame: CGRect) {
@@ -29,13 +31,15 @@ class tableViewforItems: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func dataTaken(data: [RickAndMortyQuery.Data.Character.Result]?, rickSelected: Bool?, mortySelected: Bool?) {
+    func dataTaken(data: [RickAndMortyQuery.Data.Character.Result]?, rickSelected: Bool?, mortySelected: Bool?, currentPage: Int?, totalPage: Int?) {
         guard let dataTaken = data,
               let filterRick = rickSelected,
               let filterMorty = mortySelected else { return }
         self.data = dataTaken
         self.rickSelected = filterRick
         self.mortySelected = filterMorty
+        self.currentPage = currentPage
+        self.totalPage = totalPage
         tableView.reloadData()
     }
 }
@@ -73,7 +77,7 @@ extension tableViewforItems: UITableViewDelegate, UITableViewDataSource {
         cell.setupCell(data: currentData)
 
         // Prefetching for infinite scroll
-        if currentData.id == (data[data.endIndex-3].id) {
+        if currentData.id == (data[data.endIndex-3].id) && (currentPage ?? 0 <= totalPage ?? 0) {
             if rickSelected ?? false {
                 delegate?.filterItem(filter: 1)
             } else if mortySelected ?? false {

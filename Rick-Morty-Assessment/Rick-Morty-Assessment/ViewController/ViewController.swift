@@ -14,11 +14,13 @@ class ViewController: UIViewController {
     private let tableView = tableViewforItems()
     private let filterButton = UIButton()
 
-    private var rickSelected = false
-    private var mortySelected = false
+    private(set) var rickSelected = false
+    private(set) var mortySelected = false
 
     private var model = viewModel()
     private var data = [RickAndMortyQuery.Data.Character.Result]()
+    private var currentPage = 0
+    private var totalPage = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,9 +66,11 @@ class ViewController: UIViewController {
             make.bottom.equalToSuperview()
         }
 
-        model.dataTaken = { [weak self] data in
+        model.dataTaken = { [weak self] data, currentPage, totalPage in
+            self?.currentPage = currentPage
+            self?.totalPage = totalPage
             self?.data = data
-            self?.tableView.dataTaken(data: self?.data, rickSelected: self?.rickSelected, mortySelected: self?.mortySelected)
+            self?.tableView.dataTaken(data: self?.data, rickSelected: self?.rickSelected, mortySelected: self?.mortySelected, currentPage: self?.currentPage, totalPage: self?.totalPage)
         }
     }
 }

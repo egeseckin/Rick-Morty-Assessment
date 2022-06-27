@@ -8,7 +8,7 @@ query RickAndMorty ($page: Int!, $name: String!){
       id
       name
       image
-      origin{name}
+      location{name}
     }
   }
 }

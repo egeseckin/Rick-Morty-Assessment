@@ -12,6 +12,9 @@
 		5672AC59286717DB00B3A335 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672AC58286717DB00B3A335 /* API.swift */; };
 		5672AC5E2867446C00B3A335 /* Longinus in Frameworks */ = {isa = PBXBuildFile; productRef = 5672AC5D2867446C00B3A335 /* Longinus */; };
 		5672AC6028679C1200B3A335 /* filterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672AC5F28679C1200B3A335 /* filterView.swift */; };
+		5672AC622868689B00B3A335 /* dataParseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672AC612868689B00B3A335 /* dataParseTest.swift */; };
+		5672AC6428687C2E00B3A335 /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = 5672AC6328687C2E00B3A335 /* characters.json */; };
+		5672AC662868835900B3A335 /* MockGraphQLQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5672AC652868835900B3A335 /* MockGraphQLQuery.swift */; };
 		56C1CB362866127400D4F291 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB352866127400D4F291 /* AppDelegate.swift */; };
 		56C1CB382866127400D4F291 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB372866127400D4F291 /* SceneDelegate.swift */; };
 		56C1CB3A2866127400D4F291 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C1CB392866127400D4F291 /* ViewController.swift */; };
@@ -77,6 +80,9 @@
 		5672AC562867176700B3A335 /* schema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = schema.json; sourceTree = "<group>"; };
 		5672AC58286717DB00B3A335 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = "Rick-Morty-Assessment/API.swift"; sourceTree = SOURCE_ROOT; };
 		5672AC5F28679C1200B3A335 /* filterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = filterView.swift; sourceTree = "<group>"; };
+		5672AC612868689B00B3A335 /* dataParseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dataParseTest.swift; sourceTree = "<group>"; };
+		5672AC6328687C2E00B3A335 /* characters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
+		5672AC652868835900B3A335 /* MockGraphQLQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockGraphQLQuery.swift; sourceTree = "<group>"; };
 		56C1CB322866127400D4F291 /* Rick-Morty-Assessment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick-Morty-Assessment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56C1CB352866127400D4F291 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56C1CB372866127400D4F291 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +186,9 @@
 			isa = PBXGroup;
 			children = (
 				56C1CB4C2866127700D4F291 /* Rick_Morty_AssessmentTests.swift */,
+				5672AC612868689B00B3A335 /* dataParseTest.swift */,
+				5672AC6328687C2E00B3A335 /* characters.json */,
+				5672AC652868835900B3A335 /* MockGraphQLQuery.swift */,
 			);
 			path = "Rick-Morty-AssessmentTests";
 			sourceTree = "<group>";
@@ -397,6 +406,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5672AC6428687C2E00B3A335 /* characters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +463,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				56C1CB4D2866127700D4F291 /* Rick_Morty_AssessmentTests.swift in Sources */,
+				5672AC622868689B00B3A335 /* dataParseTest.swift in Sources */,
+				5672AC662868835900B3A335 /* MockGraphQLQuery.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
